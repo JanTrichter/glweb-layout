@@ -1,45 +1,68 @@
+:root {
+    --body-height: 90vh;
+    --footer-height: calc(100vh - var(--body-height));
+}
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-header {
+nav {
     width: 100%;
     text-align: center;
     padding: 2rem;
     background-color: aqua;
-    height: 8vh;
-}
-
-main {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: var(--body-height);
+    grid-area: nav;
 }
 
 .content {
-    width: 80%;
+    width: 100%;
     background-color: mediumturquoise;
-    height: 82vh;
+    height: var(--body-height);
+    grid-area: content;
 }
 
 .ads {
-    width: 20%;
+    width: 100%;
     background-color: mediumspringgreen;
-    height: 82vh;
+    height: var(--body-height);
+    grid-area: ads;
 }
 
 
 footer {
-    bottom: 0;
-    left: 0;
-    position: fixed;
     width: 100%;
-    height: 10vh;
+    height: var(--footer-height);
     background-color: #e4e4e4;
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+/* Grid - Layout  */
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "nav content ads";
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --body-height: 10vh;
+        --footer-height: 10vh;
+    }
+
+    .container {
+        grid-template-areas:
+        "nav"
+        "content"
+        "ads";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 8fr 1fr;
+    }
 }
