@@ -13,21 +13,21 @@ nav {
     width: 100%;
     text-align: center;
     padding: 2rem;
-    background-color: aqua;
+    background-color: hsl(5, 100%, 81%);
     height: var(--body-height);
     grid-area: nav;
 }
 
 .content {
     width: 100%;
-    background-color: mediumturquoise;
+    background-color: hsl(46, 74%, 92%);
     height: var(--body-height);
     grid-area: content;
 }
 
 .ads {
     width: 100%;
-    background-color: mediumspringgreen;
+    background-color: hsl(168, 69%, 84%);
     height: var(--body-height);
     grid-area: ads;
 }
@@ -36,7 +36,7 @@ nav {
 footer {
     width: 100%;
     height: var(--footer-height);
-    background-color: #e4e4e4;
+    background-color: hsl(188, 45%, 78%);
     display: flex;
     align-items: center;
     justify-content: space-around;
